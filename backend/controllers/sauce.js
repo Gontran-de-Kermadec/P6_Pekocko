@@ -1,19 +1,9 @@
 const Sauce = require('../models/sauce');
 const fs = require('fs');
-//const  = require('../routes/user');
-
 
 exports.createNewSauce = (req, res, next) => {
     const sauceObject = JSON.parse(req.body.sauce);
-    // delete sauceObject._id;
     const sauce = new Sauce({
-        // name: req.body.name,
-        // manufacturer: req.body.manufacturer,
-        // description: req.body.description,
-        // imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
-        // mainPepper: req.body.mainPepper,
-        // heat: req.body.heat,
-        // userId: req.body.userId
         name: sauceObject.name,
         manufacturer: sauceObject.manufacturer,
         description: sauceObject.description,
@@ -31,13 +21,6 @@ exports.createNewSauce = (req, res, next) => {
 exports.getAllSauces = (req, res, next) => {
     Sauce.find()
     .then((sauces) => res.status(200).json(sauces))
-    // {
-    //       const mappedSauces = sauces.map((sauce) => {
-    //         sauce.imageUrl = req.protocol + '://' + req.get('host') + '/images/' + sauce.imageUrl;
-    //         return sauce;
-    //       });
-    //       res.status(200).json(mappedSauces);
-    //     })
     .catch(() => {
       res.status(500).send(new Error('Erreur base de données!'));
     });
