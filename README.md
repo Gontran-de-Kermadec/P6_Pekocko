@@ -6,7 +6,7 @@ Installation
 
   Pour faire tourner le front.
     
-    Une fois dans le dossier frontend, exécutez npm install. Puis npm start ou ng serve.
+    Une fois dans le dossier frontend, exécutez npm install via le terminal. Puis npm start ou ng serve.
     
     
   Pour faire touner le backend.
